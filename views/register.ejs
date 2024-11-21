@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to bottom, #ffffff, #d4e7f5);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .card {
+      background: linear-gradient(135deg, #1e3c72, #2a5298);
+      color: white;
+      padding: 30px 40px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      width: 400px;
+    }
+    .card h1 {
+      margin-bottom: 20px;
+      font-size: 24px;
+    }
+    .card form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    .card input {
+      padding: 10px;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+    }
+    .card button {
+      padding: 10px;
+      font-size: 18px;
+      border: none;
+      border-radius: 5px;
+      background: #ff7f50;
+      color: white;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .card button:hover {
+      background: #ff4500;
+    }
+    .card p {
+      margin-bottom: 0;
+      color: #ffd700;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>Register</h1>
+    <% if (message) { %>
+      <p><%= message %></p>
+    <% } %>
+    <form action="/register" method="POST">
+      <input type="text" name="name" placeholder="Name" required />
+      <input type="email" name="email" placeholder="Email" required />
+      <input type="password" name="password" placeholder="Password" required />
+      <input type="password" name="password_confirmation" placeholder="Confirm Password" required />
+      <button type="submit">Register</button>
+    </form>
+  </div>
+</body>
+</html>
